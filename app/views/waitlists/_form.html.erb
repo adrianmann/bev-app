@@ -1,0 +1,52 @@
+<%= form_with(model: waitlist) do |form| %>
+  <% if waitlist.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(waitlist.errors.count, "error") %> prohibited this waitlist from being saved:</h2>
+
+      <ul>
+        <% waitlist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label "Business Type", style: "display: block" %>
+    <%= form.text_field :business_name %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label "Do you think there is a market for customers to buy & redeem beverages on an app?", style: "display: block" %>
+    <%= form.check_box :market %>
+  </div>
+
+  <div>
+    <%= form.label "Would you be interested in opening your customer base to people outside of your premises?", style: "display: block" %>
+    <%= form.check_box :customer_base %>
+  </div>
+
+  <div>
+    <%= form.label "Would you register your business on an easy-to-use app to enable customers to purchase beverages for their friends?", style: "display: block" %>
+    <%= form.check_box :enable_customers %>
+  </div>
+
+  <div>
+    <%= form.label "What are the biggest challenges for your business with this?", style: "display: block" %>
+    <%= form.text_field :challenges %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
