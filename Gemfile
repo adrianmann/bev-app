@@ -5,6 +5,7 @@ ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.6"
+gem 'bcrypt-ruby'
 
 gem 'bootstrap', '~> 5.3.2'
 gem 'cssbundling-rails'
