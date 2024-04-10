@@ -1,5 +1,6 @@
 class WaitlistsController < ApplicationController
   before_action :set_waitlist, only: %i[ show edit update destroy ]
+  before_action :authenticate_admin!, except: %i[ new create ]
 
   # GET /waitlists or /waitlists.json
   def index
